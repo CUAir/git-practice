@@ -22,7 +22,7 @@ We'll guide you all the way to pushing a change onto the repository! The first s
 
 What this does is essentially clone, or copy the current repository from the `master` branch (we'll cover branches later) to your current working directory. You'll also notice that there is a hidden folder `.git` in the directory, which indicates that this is a git-controlled directory.
 
-Once you clone, you will have a _local repository_. You have just cloned from the _remote repository_. Changes that are pushed to the remote repo will not be reflected on your local repository unless you update your local. We'll go over that later! For now, you can now do:
+Once you clone, you will have a *local repository*. You have just cloned from the *remote repository*. Changes that are pushed to the remote repo will not be reflected on your local repository unless you update your local. We'll go over that later! For now, you can now do:
 
 `git status`
 This returns the status of your directory, although I like to consider this "what has changed since the last commit" (commit will be covered later). If you have not changed anything, this is will return nothing.
@@ -30,13 +30,21 @@ This returns the status of your directory, although I like to consider this "wha
 `git log`
 This will print the entire history of the local repository. For Terminal and git bash users this should enter a vim-like interface and so you can hit the space key to continue scrolling, or type 'q' to exit it.
 
-Onto more exciting things! First of all create a new branch (for more info on branches, go to the 'Branching' section) You can do this by: `git checkout -b <your username/useful-name>`, The `-b` flag indicates you are switching to a new branch. You can use `git checkout <branch name>` to switch branches, so you can do `git checkout master` to return to the master branch.
+Onto more exciting things! First of all create a new branch (for more info on branches, go to the 'Branching' section) You can do this by: `git checkout -b <your username/useful-name>`, (ex. `git checkout -b ef23/git-tutorial`) The `-b` flag indicates you are switching to a new branch. You can use `git checkout <branch name>` to switch branches, so you can do `git checkout master` to return to the master branch.
 
 On your new branch (you can check which branch you're on by doing `git branch`), create a new file in the local repo and name it after your netid. Enter whatever you'd like into the file and save it. Now, if you enter `git status`, this file should show up as an 'unstaged change'. You can then type `git add <filename>` and assuming you didn't type in your filename wrong, if you `git status` again, that file should now show up as a 'change to be committed'. Now, you can type `git commit -m '<helpful message>'` in and hit enter. Congratulations! You have made your first commit. You can then do `git push -u origin <branch name>` to push this to the remote repo. Navigate to the repo on Github and you should be able to see it there!
 
+There should be a box telling you your recently pushed branches. Click on the "Compare & Pull Request" box to open a new PR. If you don't you can simply click on the "branches" link (next to the # of commits), find your branch, and click "New pull request". Give it an appropriate title, A quick summary in the text box, and click "Open Pull Request". Optionally, if you are in a group, you can request a reviewer to review your changes before you merge it into master. Once you get the approval (or if no one is really available to do it), click "Merge Pull Request".
 
+You have now merged in your change into `master`! However, if you switch back to `master` (remember how to do this?), you'll notice that your change still isn't there! That's because you updated the remote repo, but not your local. You can do this with a `git pull` command. It will "pull" all the changes from the remote `master` into your local `master`.
+
+Congratulations! You have just began from cloning the repository all the way to merging in a change into `master`. The following sections will go into much more depth about exactly what happens. A summary of git operations is shown below:
+
+![git-operations](./git-operations.png)
+(source: http://blog.podrezo.com/wp-content/uploads/2014/09/git-operations.png)
 
 ## Branching
+
 
 ## Git Practices
 
