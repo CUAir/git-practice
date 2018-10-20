@@ -20,7 +20,7 @@ We'll guide you all the way to pushing a change onto the repository! The first s
 
 `git clone https://github.com/CUAir/git-practice`.
 
-What this does is essentially clone, or copy the current repository from the `master` branch (we'll cover branches later) to your current working directory. You'll also notice that there is a hidden folder `.git` in the directory, which indicates that this is a git-controlled directory.
+What this does is essentially clone, or copy the current repository from the `master` branch to your current working directory. You'll also notice that there is a hidden folder `.git` in the directory, which indicates that this is a git-controlled directory.
 
 Once you clone, you will have a *local repository*. You have just cloned from the *remote repository*. Changes that are pushed to the remote repo will not be reflected on your local repository unless you update your local. We'll go over that later! For now, you can now do:
 
@@ -30,7 +30,7 @@ This returns the status of your directory, although I like to consider this "wha
 `git log`
 This will print the entire history of the local repository. For Terminal and git bash users this should enter a vim-like interface and so you can hit the space key to continue scrolling, or type 'q' to exit it.
 
-Onto more exciting things! First of all create a new branch (for more info on branches, go to the 'Branching' section) You can do this by: `git checkout -b <your username/useful-name>`, (ex. `git checkout -b ef23/git-tutorial`) The `-b` flag indicates you are switching to a new branch. You can use `git checkout <branch name>` to switch branches, so you can do `git checkout master` to return to the master branch.
+Onto more exciting things! First of all create a new branch. You can do this by: `git checkout -b <your username/useful-name>`, (ex. `git checkout -b ef23/git-tutorial`) The `-b` flag indicates you are switching to a new branch. You can use `git checkout <branch name>` to switch branches, so you can do `git checkout master` to return to the master branch.
 
 On your new branch (you can check which branch you're on by doing `git branch`), create a new file in the local repo and name it after your netid. Enter whatever you'd like into the file and save it. Now, if you enter `git status`, this file should show up as an 'unstaged change'. You can then type `git add <filename>` and assuming you didn't type in your filename wrong, if you `git status` again, that file should now show up as a 'change to be committed'. Now, you can type `git commit -m '<helpful message>'` in and hit enter. Congratulations! You have made your first commit. You can then do `git push -u origin <branch name>` to push this to the remote repo. Navigate to the repo on Github and you should be able to see it there!
 
@@ -42,8 +42,6 @@ Congratulations! You have just began from cloning the repository all the way to 
 
 ![git-operations](./git-operations.png)
 (source: http://blog.podrezo.com/wp-content/uploads/2014/09/git-operations.png)
-
-## Branching
 
 
 ## Git Practices
@@ -57,11 +55,14 @@ your branch --> ground-test --> flight-test --> master!
 
 
 # Continuous Integration
-We use Travis CI
+We use Travis CI. This system automatically runs all of our tests on pull requests to make sure that new code doesn't break the system!
 
 
 ## Pull Requests
 
 ## How to open a PR
+Go to the main page of your repo. Then, click the button that says "New pull request". The base branch is the branch that you want to have the new code. The other branch is the branch with the new code. Add a title with a brief description and then the issue number that this pull request applies to. 
 
 ## How to review a PR
+Go to the main page of your repo. Then, click on "Pull Request" and click on the pull request that you want to review. Then, add comments and submit your review after.
+
